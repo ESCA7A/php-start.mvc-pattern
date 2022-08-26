@@ -1,0 +1,2 @@
+127.0.0.1 - - [26/Aug/2022:21:12:35 +0300] "GET / HTTP/1.1" 200 23215 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0"
+127.0.0.1 - - [26/Aug/2022:21:12:35 +0300] "GET /favicon.ico HTTP/1.1" 200 23205 "http://mvc-pattern.com/" "Mozilla/5.0 (X11; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0"

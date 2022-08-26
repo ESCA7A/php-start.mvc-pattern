@@ -1,4 +1,3 @@
 <?php
 
-phpinfo();
-sleep(3);
+require "vendor/autoload.php";
