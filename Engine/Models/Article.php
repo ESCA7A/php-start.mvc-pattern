@@ -2,7 +2,7 @@
 
 namespace Engine\Models;
 
-class Article extends AbstractDb
+class Article extends BaseModel
 {
 
 }

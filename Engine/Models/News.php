@@ -2,8 +2,13 @@
 
 namespace Engine\Models;
 
-class News extends AbstractDb
+class News extends BaseModel
 {
+    public function __CONSTRUCT()
+    {
+        $this->getData('customers');
+    }
+
     public function sayHi()
     {
         for($i = 0; $i < 10; $i++)
@@ -13,4 +18,12 @@ class News extends AbstractDb
 
         }
     }
+
+    public function getData($table)
+    {
+        $query = "INSERT INTO $table(first_name, last_name, username)VALUES('Pavel', 'Tankov', 'esca7a')";
+        #$pdo = \Engine\Models\Singleton\Pdo_Singleton\DbSingletonPdo::getInstance();
+        #$pdo->exec("$query");
+    }
+
 }

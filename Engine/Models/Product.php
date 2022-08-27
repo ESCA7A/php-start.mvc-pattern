@@ -2,7 +2,7 @@
 
 namespace Engine\Models;
 
-class Product extends AbstractDb
+class Product extends BaseModel
 {
 
 }
