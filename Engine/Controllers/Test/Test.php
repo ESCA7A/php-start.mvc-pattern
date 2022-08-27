@@ -1,6 +1,6 @@
 <?php
 
-namespace Engine\Controllers;
+namespace Engine\Controllers\Test;
 
 interface Test
 {

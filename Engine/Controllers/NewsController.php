@@ -2,18 +2,24 @@
 
 namespace Engine\Controllers;
 
+use Engine\Models\News;
+
 class NewsController extends Controller
 {
-    private string $path = __FILE__;
+    protected News $newsModel;
 
-    public function sayHi(): void
+    public function __CONSTRUCT()
     {
-        echo "я класс: " . $this->path;
+        $this->newsModel = new News();
     }
-
     public function actionIndex(): bool
     {
-        $this->sayHi();
+        return true;
+    }
+
+    public function actionView($category, $id): bool
+    {
+        $this->newsModel->sayHi();
         return true;
     }
 }

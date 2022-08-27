@@ -26,29 +26,35 @@ class Router extends componentRouter
         foreach ($this->routes as $uriRequest => $path)
         {
             try{
-                if(preg_match("~$uriRequest~", $uri))
+                if(preg_match("~^$uriRequest$~", $uri))
                 {
-                    /**
-                     * split the string into two parts
-                     */
-                    $segments = explode("/", $path);
 
                     /**
-                     *  get first part and merge to string: "fistPartController"
+                     * get internal route ~Controller/Action/param1/param2~
                      */
-                    $controllerName = array_shift($segments). "Controller";
+                    $internalRoute = preg_replace("~$uriRequest~", $path, $uri);
+
+                    /**
+                     * split the string uri path into two parts
+                     */
+                    $uriString = explode("/", $internalRoute);
+
+                    /**
+                     *  get first part uri and merge to string: "[f]istPartController"
+                     */
+                    $controllerNameLowerCase = array_shift($uriString). "Controller";
 
                     /**
                      * Add controller name
                      * switch first alpha to upper case
                      */
-                    $controllerName = ucfirst($controllerName);
+                    $controllerName = ucfirst($controllerNameLowerCase);
 
                     /**
                      * Add action name
                      * switch first alpha to upper case
                      */
-                    $actionName = "action" . ucfirst(array_shift($segments));
+                    $actionName = "action" . ucfirst(array_shift($uriString));
 
                     /**
                      * if true -> connect class of controller and action handles the request
@@ -57,9 +63,10 @@ class Router extends componentRouter
 
                     /**
                      * create object of class Controller
+                     * Call actionName - method
                      */
-                    $classPath = new $classPath;
-                    $result = $classPath->actionIndex();
+                    $classAction = new $classPath;
+                    $result = call_user_func_array(array($classAction, $actionName), $uriString);
 
                     /**
                      * break cycle where method start

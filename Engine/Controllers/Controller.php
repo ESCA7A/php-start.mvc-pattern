@@ -2,9 +2,9 @@
 
 namespace Engine\Controllers;
 
-abstract class Controller implements Test
+abstract class Controller
 {
     private string $path;
-    abstract public function sayHi(): void;
     abstract public function actionIndex(): bool;
+    abstract public function actionView($category, $id);
 }

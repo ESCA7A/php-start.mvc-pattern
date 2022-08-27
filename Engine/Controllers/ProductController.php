@@ -13,7 +13,13 @@ class ProductController extends Controller
 
     public function actionIndex(): bool
     {
-        $this->sayHi();
+        echo "actionIndex: ". $this->path;
+        return true;
+    }
+
+    public function actionView(): bool
+    {
+        echo "actionView: ". $this->path;
         return true;
     }
 }
