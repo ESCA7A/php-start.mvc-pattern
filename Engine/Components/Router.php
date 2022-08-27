@@ -2,11 +2,11 @@
 
 namespace Engine\Components;
 
-class Router
+class Router extends componentRouter
 {
 
-    private array $routes;
-    private string $uri;
+    protected array $routes;
+    protected string $uri;
 
     public function __CONSTRUCT()
     {
@@ -14,26 +14,7 @@ class Router
         $this->routes = include $routesPath;
     }
 
-    /**
-     * @return string|void
-     */
-    private function getUri()
-    {
-        try{
-            if(!empty($_SERVER['REQUEST_URI']))
-            {
-                $this->uri = $_SERVER['REQUEST_URI'];
-                $this->uri = trim($this->uri, "/");
-                return $this->uri;
-            }
-            throw new \Exception('Что-то пошло не так');
-        }catch(\Exception $e)
-        {
-            $e->getMessage();
-        }
-    }
-
-    public function getRoutes()
+    public function getRoutes(): void
     {
         /**
          * get uri request string

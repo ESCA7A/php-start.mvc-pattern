@@ -6,5 +6,5 @@ abstract class Controller implements Test
 {
     private string $path;
     abstract public function sayHi(): void;
-    abstract public function actionIndex();
+    abstract public function actionIndex(): bool;
 }

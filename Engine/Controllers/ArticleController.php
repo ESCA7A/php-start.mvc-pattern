@@ -11,7 +11,7 @@ class ArticleController extends Controller
         echo "я класс: " . $this->path;
     }
 
-    public function actionIndex()
+    public function actionIndex(): bool
     {
         $this->sayHi();
         return true;
