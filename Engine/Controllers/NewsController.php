@@ -2,15 +2,15 @@
 
 namespace Engine\Controllers;
 
-use Engine\Models\News;
+use Engine\Models\News as ModelNews;
 
 class NewsController extends Controller
 {
-    protected News $newsModel;
+    protected ModelNews $newsModel;
 
     public function __CONSTRUCT()
     {
-        $this->newsModel = new News();
+        $this->newsModel = new ModelNews();
     }
     public function actionIndex(): bool
     {

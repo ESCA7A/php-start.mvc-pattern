@@ -8,7 +8,8 @@ class News extends AbstractDb
     {
         for($i = 0; $i < 10; $i++)
         {
-            echo "HELLO";
+            echo "<pre>";
+            echo "HELLO, I AT: ".__FILE__;
 
         }
     }
