@@ -7,17 +7,17 @@ namespace Composer\Autoload;
 class ComposerStaticInit439db5b67f0262fc8219b16b130402f4
 {
     public static $prefixesPsr0 = array (
-        's' => 
+        'E' => 
         array (
-            'src\\' => 
+            'Engine\\' => 
             array (
-                0 => __DIR__ . '/../..',
+                0 => __DIR__ . '/../..' . '/Engine',
             ),
         ),
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

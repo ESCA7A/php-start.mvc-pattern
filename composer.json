@@ -1,7 +1,10 @@
 {
   "autoload": {
     "psr-0": {
-      "src\\": "Engine/"
+      "Engine\\": "Engine/"
+    },
+    "psr-4": {
+      "Engine\\": "Engine/"
     }
   }
 }
