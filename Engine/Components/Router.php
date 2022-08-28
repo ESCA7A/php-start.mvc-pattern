@@ -10,8 +10,15 @@ class Router extends componentRouter
 
     public function __CONSTRUCT()
     {
+        /**
+         * get absolute routes path
+         */
         $routesPath = __DIR__ . "/../Etc/Routes.php";
-        $this->routes = include $routesPath;
+
+        /**
+         * require routes array
+         */
+        $this->routes = require $routesPath;
     }
 
     public function getRoutes(): void
@@ -20,6 +27,7 @@ class Router extends componentRouter
          * get uri request string
          */
         $uri = $this->getUri();
+
         /**
          * check values uri in Routes.php
          */
@@ -73,7 +81,6 @@ class Router extends componentRouter
                      */
                     if($result != null) break;
                 }
-                throw new \Exception('страница не найдена');
             } catch (\Exception $e)
             {
                 $e->getMessage();
