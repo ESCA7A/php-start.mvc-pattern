@@ -2,7 +2,7 @@
 
 namespace Engine\Controllers;
 
-class ProductController extends Controller
+class ProductController implements ProductActionInterface
 {
     private string $path = __FILE__;
 
@@ -17,9 +17,9 @@ class ProductController extends Controller
         return true;
     }
 
-    public function actionView(): bool
+    public function actionList($category, $id): bool
     {
-        echo "actionView: ". $this->path;
+        echo "actionList: ". $this->path;
         return true;
     }
 }

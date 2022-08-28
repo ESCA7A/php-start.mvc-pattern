@@ -11,7 +11,9 @@ class CustomersPdoInstance extends DbSingletonPdo implements CustomersInterface
 
     public function __CONSTRUCT()
     {
-        $this->pdo = new PDO();
+        $this->pdo = DbSingletonPdo::getInstance();
+        $sql = 'SELECT name, color, calories FROM fruit ORDER BY name';
+        $this->pdo::exec($sql);
     }
 
     public function setId($id)
